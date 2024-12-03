@@ -98,6 +98,40 @@ void registrar() {
             cout << "Ha devuelto: " << libros[opcion - 1] << endl;
         }
     }
-    
+    void menu() {
+        int opcion;
+        do {
+            cout << "\n--- Menú de Biblioteca ---" << endl;
+            cout << "1. Registrarse" << endl;
+            cout << "2. Pedir prestado un libro" << endl;
+            cout << "3. Devolver un libro" << endl;
+            cout << "4. Salir" << endl;
+            cout << "Seleccione una opción: ";
+            cin >> opcion;
+            cin.ignore();
+
+            switch (opcion) {
+                case 1:
+                    registrar();
+                    break;
+                case 2:
+                    pedirPrestado();
+                    break;
+                case 3:
+                    devolverLibro();
+                    break;
+                case 4:
+                    cout << "HASTA LUEGO VALLA CON DIOS, NO NOS VALLA A FARICEAR CON LA BIBLIOTECA DE LA ESQUINA VUELVA PRONTO" << endl;
+                    break;
+                default:
+                    cout << "Intente de nuevo." << endl;
+            }
+        } while (opcion != 4);
+    }
+};
+
+int main() {
+    Biblioteca biblioteca;
+    biblioteca.menu();
     return 0;
 }
