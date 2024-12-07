@@ -41,7 +41,8 @@ public:
             prestados[i] = false;
         }
     }
-void registrar() {
+
+    void registrar() {
         cout << "Ingrese su nombre: ";
         getline(cin, usuario);
         cout << "Registro exitoso. Bienvenido, " << usuario << "!" << endl;
@@ -98,6 +99,7 @@ void registrar() {
             cout << "Ha devuelto: " << libros[opcion - 1] << endl;
         }
     }
+
     void menu() {
         int opcion;
         do {
@@ -131,6 +133,10 @@ void registrar() {
 };
 
 int main() {
+    Biblioteca biblioteca;
+    biblioteca.menu();
+    return 0;
+}
     Biblioteca biblioteca;
     biblioteca.menu();
     return 0;
